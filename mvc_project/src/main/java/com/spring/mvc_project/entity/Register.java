@@ -1,5 +1,6 @@
 package com.spring.mvc_project.entity;
 
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
