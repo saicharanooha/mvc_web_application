@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Update Contact Info</title>
+    <style>
+        body {
+            font-family: "Segoe UI", Tahoma, sans-serif;
+            background: linear-gradient(to right, #11998e, #38ef7d);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .form-container {
+            background: #fff;
+            padding: 35px 30px;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            width: 420px;
+        }
+
+        .form-container h2 {
+            text-align: center;
+            margin-bottom: 25px;
+            color: #333;
+            font-size: 24px;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: 600;
+            color: #444;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 14px;
+            transition: all 0.3s;
+        }
+
+        input:focus, textarea:focus {
+            border-color: #11998e;
+            outline: none;
+            box-shadow: 0 0 6px rgba(17,153,142,0.3);
+        }
+
+        button {
+            width: 100%;
+            padding: 14px;
+            background: #11998e;
+            color: #fff;
+            font-size: 16px;
+            font-weight: bold;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background: #0f7c6f;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="form-container">
+    <h2>Update Contact Information</h2>
+
+    <form th:action="@{/address}" th:object="${key}" method="post">
+
+        <div class="form-group">
+            <label for="id">ID</label>
+            <input type="number" id="id" th:field="*{id}" placeholder="Enter ID to update" required />
+        </div>
+
+        <div class="form-group">
+            <label for="FristName">FristName</label>
+            <input type="text" id="FristName" th:field="*{FristName}" placeholder="Enter first name" />
+        </div>
+
+        <div class="form-group">
+            <label for="LastName">LastName</label>
+            <input type="text" id="LastName" th:field="*{LastName}" placeholder="Enter last name" />
+        </div>
+
+        <div class="form-group">
+            <label for="EmailId">EmailAddress</label>
+            <input type="email" id="EmailId" th:field="*{EmailId}" placeholder="example@email.com" />
+        </div>
+
+        <div class="form-group">
+            <label for="PhoneNumber">PhoneNumber</label>
+            <input type="tel" id="PhoneNumber" th:field="*{PhoneNumber}" placeholder="1234567890" pattern="[0-9]{10}" />
+        </div>
+
+        <div class="form-group">
+            <label for="Address">Address</label>
+            <textarea id="Address" th:field="*{Address}" placeholder="Enter address"></textarea>
+        </div>
+
+        <button type="submit">Update</button>
+    </form>
+</div>
+
+</body>
+</html>
