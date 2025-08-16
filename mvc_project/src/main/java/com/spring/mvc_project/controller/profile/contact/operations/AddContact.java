@@ -23,14 +23,5 @@ public class AddContact {
 		return view;
 	}
 	
-	@PostMapping("/updateprofile")
-	public ModelAndView processAddContact(@ModelAttribute("key") RegisterDTO dto) {
-		String msg=pcontacts.addContact(dto);
-		ModelAndView view= new ModelAndView();
-		view.addObject("key", msg);
-		view.setViewName("profile_contact_results");
-		return view;
-		
-	}
 
 }
