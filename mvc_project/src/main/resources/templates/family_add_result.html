@@ -2,14 +2,36 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Member Output</title>
+    <title>Family Member Result</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
 
-    <h2>Member Details</h2>
+    <div class="bg-white shadow-xl rounded-2xl p-8 w-full max-w-lg">
+        <h2 class="text-2xl font-bold text-gray-800 text-center mb-6">
+            🎉 Member Added Successfully
+        </h2>
 
-    <p>Name: <span th:text="${key.id}"></span></p>
-   >
+        <!-- Card content -->
+        <div class="space-y-4 text-gray-700">
+            <p class="text-lg">
+                <span class="font-semibold">Save Member ID for future reference:</span>
+                <span class="ml-2 text-blue-600 font-mono" th:text="${key.id}"></span>
+            </p>
+        </div>
+
+        <!-- Buttons -->
+        <div class="mt-8 flex justify-between">
+            <a th:href="@{/family_add}" 
+               class="bg-blue-600 text-white px-5 py-2 rounded-lg shadow hover:bg-blue-700 transition">
+                ➕ Add Another
+            </a>
+            <a th:href="@{/members/list}" 
+               class="bg-green-600 text-white px-5 py-2 rounded-lg shadow hover:bg-green-700 transition">
+                📋 View All
+            </a>
+        </div>
+    </div>
 
 </body>
 </html>
