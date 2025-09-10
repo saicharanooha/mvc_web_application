@@ -11,10 +11,37 @@ import jakarta.persistence.Id;
 public class Family {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	UUID id;
+	long id;
 	String name;
 	String relation;
-
-	
+	public long getId() {
+		return id;
+	}
+	public void setId(long id) {
+		this.id = id;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getRelation() {
+		return relation;
+	}
+	public void setRelation(String relation) {
+		this.relation = relation;
+	}
+	public Family(long id, String name, String relation) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.relation = relation;
+	}
+	public Family() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+		
 	
 }
