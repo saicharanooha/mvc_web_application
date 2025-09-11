@@ -4,17 +4,17 @@ import java.util.UUID;
 
 public class DeleteFamilyDTO {
 	
-	UUID id;
+	Long id;
 
-	public UUID getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(UUID id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
-	public DeleteFamilyDTO(UUID id) {
+	public DeleteFamilyDTO(Long id) {
 		super();
 		this.id = id;
 	}
@@ -23,7 +23,8 @@ public class DeleteFamilyDTO {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	
+
+		
 	
 
 }
