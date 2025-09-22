@@ -5,7 +5,9 @@ import org.springframework.stereotype.Controller;
 
 import com.spring.mvc_project.controller.CreateAccount.CreateAccount;
 import com.spring.mvc_project.dto.AccountCreate;
+import com.spring.mvc_project.entity.LoginDetails;
 import com.spring.mvc_project.entity.SignUpAccount;
+import com.spring.mvc_project.repository.AccountRepo.LogInRepo;
 import com.spring.mvc_project.repository.AccountRepo.SignUpRepo;
 
 @Controller
@@ -13,9 +15,16 @@ public class AccountService {
 	
 	@Autowired
 	private SignUpRepo signup;
+	@Autowired
+	private LogInRepo loginRepo;
 	public SignUpAccount insert(AccountCreate acc1) {
 		
 		SignUpAccount acc= new SignUpAccount();
+		
+		LoginDetails details= new LoginDetails();
+		details.setEmailId(acc1.getEmailId());
+		details.setPassword(acc1.getPassword());
+		loginRepo.save(details);	
 		acc.setName(acc1.getName());
 		acc.setLastName(acc1.getLastName());
 		acc.setEmailId(acc1.getEmailId());
